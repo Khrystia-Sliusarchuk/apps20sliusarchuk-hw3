@@ -15,13 +15,15 @@ public class SortDecorator extends SmartArrayDecorator {
     }
 
     private Object[] sort() {
-        Object[] tempArray = Arrays.copyOf(smartArray.toArray(), smartArray.size());
+        Object[] tempArray =
+                Arrays.copyOf(smartArray.toArray(), smartArray.size());
         Arrays.sort(tempArray, comparator);
         return tempArray;
     }
 
     @Override
     public String operationDescription() {
-        return "Sorted by specific comparator " + smartArray.operationDescription();
+        return "Sorted by specific comparator "
+                + smartArray.operationDescription();
     }
 }

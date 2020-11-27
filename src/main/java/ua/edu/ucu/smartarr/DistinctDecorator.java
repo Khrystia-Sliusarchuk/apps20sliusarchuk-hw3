@@ -11,11 +11,13 @@ public class DistinctDecorator extends SmartArrayDecorator {
     }
 
     private Object[] removeDuplicates() {
-        Object[] tempArray = Arrays.copyOf(smartArray.toArray(), smartArray.size());
+        Object[] tempArray =
+                Arrays.copyOf(smartArray.toArray(), smartArray.size());
         ArrayList<Object> res = new ArrayList<>();
         for (int i = 0; i < tempArray.length; i++) {
             for (int k = i + 1; k < tempArray.length; k++) {
-                if (!res.contains(tempArray[i]) && !tempArray[i].equals(tempArray[k])) {
+                if (!res.contains(tempArray[i])
+                        && !tempArray[i].equals(tempArray[k])) {
                     res.add(tempArray[i]);
                 }
             }

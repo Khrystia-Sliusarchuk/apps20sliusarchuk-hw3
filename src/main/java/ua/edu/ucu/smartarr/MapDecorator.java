@@ -16,7 +16,8 @@ public class MapDecorator extends SmartArrayDecorator {
     }
 
     private Object[] map() {
-        Object[] tempArray = Arrays.copyOf(smartArray.toArray(), smartArray.size());
+        Object[] tempArray =
+                Arrays.copyOf(smartArray.toArray(), smartArray.size());
         ArrayList<Object> res = new ArrayList<>();
         for (int i = 0; i < tempArray.length; i++) {
             res.add(function.apply(tempArray[i]));
@@ -26,6 +27,7 @@ public class MapDecorator extends SmartArrayDecorator {
 
     @Override
     public String operationDescription() {
-        return "Applied specific function to " + smartArray.operationDescription();
+        return "Applied specific function to "
+                + smartArray.operationDescription();
     }
 }

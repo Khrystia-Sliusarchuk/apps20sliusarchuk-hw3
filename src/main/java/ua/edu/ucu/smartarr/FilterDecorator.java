@@ -16,7 +16,8 @@ public class FilterDecorator extends SmartArrayDecorator {
     }
 
     private Object[] satisfyCond() {
-        Object[] tempArray = Arrays.copyOf(smartArray.toArray(), smartArray.size());
+        Object[] tempArray =
+                Arrays.copyOf(smartArray.toArray(), smartArray.size());
         ArrayList<Object> res = new ArrayList<>();
         for (int i = 0; i < tempArray.length; i++) {
             if (predicate.test(tempArray[i])) {
@@ -28,6 +29,7 @@ public class FilterDecorator extends SmartArrayDecorator {
 
     @Override
     public String operationDescription() {
-        return "Filtered by specific conditions " + smartArray.operationDescription();
+        return "Filtered by specific conditions "
+                + smartArray.operationDescription();
     }
 }
