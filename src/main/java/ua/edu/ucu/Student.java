@@ -40,7 +40,7 @@ class Student {
     @Override
     public boolean equals(Object o) {
         double DELTA = 0.000001;
-        if (!(o instanceof Student) || o == null) {
+        if (o == null || !(o instanceof Student)) {
             return false;
         }
         Student student = (Student) o;
