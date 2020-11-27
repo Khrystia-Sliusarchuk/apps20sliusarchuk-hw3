@@ -15,8 +15,8 @@ import ua.edu.ucu.smartarr.DistinctDecorator;
 public class SmartArrayApp {
 
     public static Integer[]
-    filterPositiveIntegersSortAndMultiplyBy2
-            (Integer[] integers) {
+    filterPositiveIntegersSortAndMultiplyBy2(
+            Integer[] integers) {
 
         MyPredicate pr = new MyPredicate() {
             @Override
@@ -51,32 +51,32 @@ public class SmartArrayApp {
     }
 
     public static String[]
-    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname
-            (Student[] students) {
+    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(
+            Student[] students) {
         final int YEAR_COND = 2;
         final int GPA_COND = 4;
 
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
-                return ((Student) t).getGPA() >= GPA_COND &&
-                        ((Student) t).getYear() == YEAR_COND;
+                return ((Student) t).getGPA() >= GPA_COND
+                        && ((Student) t).getYear() == YEAR_COND;
             }
         };
 
         MyComparator cmp = new MyComparator() {
             @Override
             public int compare(Object obj, Object other) {
-                return ((Student) obj).getSurname().compareTo
-                        (((Student) other).getSurname());
+                return ((Student) obj).getSurname().compareTo(
+                        ((Student) other).getSurname());
             }
         };
 
         MyFunction func = new MyFunction() {
             @Override
             public Object apply(Object t) {
-                return ((Student) t).getSurname() + " " +
-                        ((Student) t).getName();
+                return ((Student) t).getSurname() + " "
+                        + ((Student) t).getName();
             }
         };
 

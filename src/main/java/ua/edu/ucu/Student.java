@@ -7,6 +7,7 @@ class Student {
     private int year;
     private String name;
     private String surname;
+    static final double DELTA = 0.000001;
 
     public Student(String name, String surname, double GPA, int year) {
         this.GPA = GPA;
@@ -39,18 +40,18 @@ class Student {
 
     @Override
     public boolean equals(Object o) {
-        double DELTA = 0.000001;
         if (o == null || !(o instanceof Student)) {
             return false;
         }
         Student student = (Student) o;
-        return student.GPA - GPA < DELTA && year == student.year &&
-                name.equals(student.name) && surname.equals(student.surname);
+        return student.GPA - GPA < DELTA && year == student.year
+                && name.equals(student.name) && surname.equals(student.surname);
     }
 
     @Override
     public String toString() {
-        return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+        return "Student{name=" + name + ", surname=" + surname
+                + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
 
 }
