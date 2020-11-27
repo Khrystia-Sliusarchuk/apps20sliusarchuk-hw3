@@ -3,11 +3,11 @@ package ua.edu.ucu;
 
 class Student {
 
+    static final double DELTA = 0.000001;
     private double GPA;
     private int year;
     private String name;
     private String surname;
-    static final double DELTA = 0.000001;
 
     public Student(String name, String surname, double GPA, int year) {
         this.GPA = GPA;
